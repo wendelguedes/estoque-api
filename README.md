@@ -1,0 +1,1 @@
+Swagger: http://localhost:9090/estoque-api/swagger-ui.html
