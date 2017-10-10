@@ -1,7 +1,8 @@
 package br.ufg.dwm.estoque.model;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -30,7 +31,7 @@ public class ItemEstoque implements Serializable {
 
     private BigDecimal quantidade = BigDecimal.ZERO;
 
-    private LocalDate data;
+    private Date data;
 
     public Long getId() {
         return id;
@@ -64,11 +65,11 @@ public class ItemEstoque implements Serializable {
         this.quantidade = quantidade;
     }
 
-    public LocalDate getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(Date data) {
         this.data = data;
     }
 

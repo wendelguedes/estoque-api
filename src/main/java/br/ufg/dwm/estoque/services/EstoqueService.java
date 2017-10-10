@@ -14,6 +14,10 @@ public class EstoqueService {
     @Autowired
     EstoqueRepository estoqueRepository;
 
+    public Estoque consultarEstoquePorId(Long id) {
+        return estoqueRepository.findOne(id);
+    }
+
     public Estoque salvarEstoque(Estoque estoque) {
         return estoqueRepository.save(estoque);
     }
