@@ -5,5 +5,4 @@ import org.springframework.data.repository.CrudRepository;
 import br.ufg.dwm.estoque.model.ItemEstoque;
 
 public interface ItemEstoqueRepository extends CrudRepository<ItemEstoque, Long> {
-
 }
