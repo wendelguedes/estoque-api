@@ -40,8 +40,8 @@ public class ItemEstoqueService {
         return (List<ItemEstoque>) itemEstoqueRepository.findAll();
     }
 
-	public ItemEstoque consultarItemEstoquePorId(Long id) {
-		 return itemEstoqueRepository.findOne(id);
+	public List<ItemEstoque> listarItensEstoPorProduto(Long id) {
+		return (List<ItemEstoque>) itemEstoqueRepository.listarItensEstoquePorProduto(id);
 	}
 
 }

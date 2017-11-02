@@ -15,14 +15,14 @@ import br.ufg.dwm.estoque.model.Estoque;
 import br.ufg.dwm.estoque.services.EstoqueService;
 
 @RestController
-@RequestMapping("/estoques")
+@RequestMapping("estoques")
 public class EstoqueController {
 
     @Autowired
     EstoqueService estoqueService;
 
     @PostMapping()
-    public Estoque salvarProduto(@RequestBody @Valid Estoque estoque){
+    public Estoque salvarEstoque(@RequestBody @Valid Estoque estoque){
         return estoqueService.salvarEstoque(estoque);
     }
 

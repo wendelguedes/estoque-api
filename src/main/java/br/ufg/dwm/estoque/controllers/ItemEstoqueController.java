@@ -2,10 +2,13 @@ package br.ufg.dwm.estoque.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,18 +24,17 @@ public class ItemEstoqueController {
 	private ItemEstoqueService itemEstoqueService;
 
 	@PostMapping()
-	public ItemEstoque salvarItemEstoqueVo(ItemEstoqueVo itemVo){
+	public ItemEstoque salvarItemEstoqueVo(@RequestBody @Valid ItemEstoqueVo itemVo){
 		return itemEstoqueService.salvarItemEstoqueVo(itemVo);
 	}
 
-	@GetMapping("/{id}")
-	public ItemEstoque consultarItemEstoquePorId(@PathVariable Long id){
-		return itemEstoqueService.consultarItemEstoquePorId(id);
+	@GetMapping("/{produto_id}")
+	public List<ItemEstoque> listarItensEstoquePorProduto(@PathVariable Long produto_id){
+		return itemEstoqueService.listarItensEstoPorProduto(produto_id);
 	}
 
 	@GetMapping
 	public List<ItemEstoque> listarItensEstoque(){
 		return itemEstoqueService.listarItensEstoque();
 	}
-
 }

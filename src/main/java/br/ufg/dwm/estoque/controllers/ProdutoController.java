@@ -16,7 +16,7 @@ import br.ufg.dwm.estoque.model.Produto;
 import br.ufg.dwm.estoque.services.ProdutoService;
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("produtos")
 public class ProdutoController {
 
     @Autowired
